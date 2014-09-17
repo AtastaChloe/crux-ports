@@ -1,0 +1,16 @@
+# Description: English dictionary for aspell
+# URL:         http://aspell.net
+# Maintainer:  Juergen Daubert, jue at crux dot nu
+# Depends on:  aspell
+
+name=aspell-fr
+version=0.50-3
+release=1
+source=(http://ftp.gnu.org/gnu/aspell/dict/fr/aspell-fr-$version.tar.bz2)
+
+build () {
+    cd aspell-fr-$version
+    ./configure
+    make
+    make DESTDIR=$PKG install
+}
