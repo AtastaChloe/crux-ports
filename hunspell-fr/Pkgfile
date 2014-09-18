@@ -1,0 +1,37 @@
+# Description:	Hunspell dictionary for French
+# URL:		http://www.dicollecte.org/
+# Maintainer:	Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on:	hunspell
+
+name=hunspell-fr
+version=5.1
+release=1
+source=(
+http://www.dicollecte.org/download/fr/hunspell-french-dictionaries-v5.1.zip
+)
+
+build() {
+
+  declare -A missing
+	mkdir -p $PKG/usr/share/hunspell
+
+	cp $SRC/*.aff $SRC/*.dic $PKG/usr/share/hunspell/
+
+	# Replace duplicate files with symbolic links
+	pushd $PKG/usr/share/hunspell
+	(md5sum * | sort | uniq --repeated -w 32 --all-repeated=separate; echo) | \
+	while read sum name; do
+		if [ -n "$name" ]; then
+			[ -z "$dups" ] && declare -A dups
+			dups[${#dups[*]}]=$name
+		else
+			for name in ${dups[@]}; do
+				[ $name != ${dups[0]} ] && ln -s -f ${dups[0]} $name
+			done
+			unset dups
+		fi
+	done
+	popd
+
+	# Create symbolic links for missing dictionaries
+}

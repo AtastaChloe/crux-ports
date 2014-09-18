@@ -1,0 +1,15 @@
+drwxr-xr-x	chloe/chloe	usr/
+drwxr-xr-x	chloe/chloe	usr/share/
+drwxr-xr-x	chloe/chloe	usr/share/hunspell/
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-classique.aff
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-classique.dic
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-moderne.aff
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-moderne.dic
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-reforme1990.aff
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-reforme1990.dic
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-toutesvariantes.aff
+-rw-r--r--	chloe/chloe	usr/share/hunspell/fr-toutesvariantes.dic
+lrwxrwxrwx	chloe/chloe	usr/share/hunspell/fr_BE.aff -> fr_FR.aff
+lrwxrwxrwx	chloe/chloe	usr/share/hunspell/fr_BE.dic -> fr_FR.dic
+lrwxrwxrwx	chloe/chloe	usr/share/hunspell/fr_CA.aff -> fr_FR.aff
+lrwxrwxrwx	chloe/chloe	usr/share/hunspell/fr_CA.dic -> fr_FR.dic
