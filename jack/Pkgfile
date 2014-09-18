@@ -1,8 +1,9 @@
 # Description: A real-time, low latency audio daemon.
 # URL: http://jackaudio.org/
-# Maintainer: Danny Rawlins, monster dot romster at gmail dot com
-# Packager: Danny Rawlins, monster dot romster at gmail dot com
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
 # Depends on: libsamplerate python
+# (just a fix for Romster's package)
 
 name=jack
 version=1.9.10
