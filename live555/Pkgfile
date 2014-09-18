@@ -1,0 +1,19 @@
+# Description: live555 RTSP library
+# URL: http://www.live555.com/
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: 
+# http://www.live555.com/liveMedia/public/live.2014.09.11.tar.gz
+
+name=live555
+version=2014.09.11
+release=1
+source=(http://www.live555.com/liveMedia/public/live.$version.tar.gz)
+
+build() {
+  cd live
+  ./genMakefiles linux-64bit
+  make PREFIX=/usr/
+	make PREFIX=/usr/ DESTDIR=$PKG install
+
+}
