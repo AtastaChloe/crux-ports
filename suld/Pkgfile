@@ -1,0 +1,24 @@
+# Description: suld
+# URL: http://www.samsung.com/fr/support/model/CLX-3300/SEE
+# Maintainer:  Chloe Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloe Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: cups
+
+name=suld
+version=1.00.27.04
+release=1
+source=(http://downloadcenter.samsung.com/content/DR/201407/20140709151822236/ULD_V$version.tar.gz)
+
+build() {
+	cd uld
+  find . -type f | xargs file | grep ASCII | cut -d: -f1 | while read file; do sed -i s@/opt@\$PKG/opt@g $file; done
+  ./install.sh
+
+#	./conifigure --prefix=/usr --disable-nls --with-openssl=/usr \
+#	            --mandir=/usr/man --sysconfdir=/usr/etc
+#
+#	make
+#	make DESTDIR=$PKG install
+
+#	rm -r $PKG/usr/lib
+}
