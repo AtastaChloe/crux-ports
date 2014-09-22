@@ -1,0 +1,6 @@
+drwxr-xr-x	root/root	etc/
+-rwxr-xr-x	root/root	etc/docx2txt.config
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/docx2txt.pl
+-rwxr-xr-x	root/root	usr/bin/docx2txt.sh

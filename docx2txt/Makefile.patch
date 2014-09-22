@@ -1,0 +1,16 @@
+--- Makefile.good	2014-09-22 17:06:45.978424754 +0200
++++ Makefile	2014-09-22 17:07:21.160126149 +0200
+@@ -26,13 +26,6 @@
+ 	@echo "Installing script files [$(BINFILES)] in \"$(BINDIR)\" .."
+ 	@[ -d "$(BINDIR)" ] || mkdir -p "$(BINDIR)"
+ 	$(INSTALL) -m 755 $^ "$(BINDIR)"
+-ifneq ($(PERL),)
+-	@echo "Setting systemConfigDir to [$(CONFIGDIR)] in \"$(BINDIR)/docx2txt.pl\" .."
+-	$(PERL) -pi -e "s%\"/etc\";%\"$(CONFIGDIR)\";%" "$(BINDIR)/docx2txt.pl"\
+-	&& rm -f "$(BINDIR)/docx2txt.pl.bak"
+-else
+-	@echo "*** Set systemConfigDir to \"$(CONFIGDIR)\" in \"$(BINDIR)/docx2txt.pl\"."
+-endif
+ 
+ installconfig: $(CONFIGFILE)
+ 	@echo "Installing config file [$(CONFIGFILE)] in \"$(CONFIGDIR)\" .."

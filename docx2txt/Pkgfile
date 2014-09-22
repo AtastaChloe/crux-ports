@@ -1,0 +1,17 @@
+# Description: LaTeX WYSIWYM editor.
+# URL: http://www.lyx.org/
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: ditto
+# Depends on: perl
+
+name=docx2txt
+version=1.4
+release=1
+source=(http://downloads.sourceforge.net/project/$name/$name/v$version/$name-$version.tgz Makefile.patch)
+
+build() {
+  cd $name-$version
+  chown -R root: .
+  patch -p1 Makefile < ../Makefile.patch
+  make BINDIR=${PKG}/usr/bin/ CONFIGDIR=${PKG}/etc/ install
+}
