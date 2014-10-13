@@ -1,0 +1,17 @@
+# Description: date library for python
+# URL: https://labix.org/python-dateutil
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: python
+# https://labix.org/download/python-dateutil/python-dateutil-1.5.tar.gz
+
+name=python-dateutil
+version=1.5
+release=1
+source=(https://labix.org/download/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  python setup.py build
+  python setup.py install --prefix=/usr --root=$PKG
+}

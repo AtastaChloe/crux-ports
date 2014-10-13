@@ -1,0 +1,20 @@
+# Description: bumblebee is an implementation of tools for nvidia Optimus systems.
+# URL: http://libbsd.freedesktop.org/wiki
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: libbsd
+
+name=bumblebee
+version=3.2.1
+release=1
+source=(http://bumblebee-project.org/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/man
+
+	make DESTDIR=$PKG install
+}

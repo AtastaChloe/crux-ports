@@ -1,0 +1,18 @@
+# Description: ps files annotator. Can also handle pdf files through ps2pdf
+# URL: http://www.flpsed.org
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: fltk ghostscript
+#http://flpsed.org/flpsed-0.7.2.tar.gz
+
+name=flpsed
+version=0.7.2
+release=1
+source=(http://flpsed.org/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}

@@ -1,0 +1,17 @@
+# Description: python spreadsheet editor
+# URL: http://manns.github.io/pyspread/
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: python wxpython
+# https://pypi.python.org/packages/source/p/pyspread/pyspread-0.3.3.tar.gz
+
+name=pyspread
+version=0.3.3
+release=1
+source=(https://pypi.python.org/packages/source/p/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  python setup.py build
+  python setup.py install --prefix=$PKG/usr
+}

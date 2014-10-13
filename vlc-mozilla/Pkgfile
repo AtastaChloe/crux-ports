@@ -2,7 +2,7 @@
 # URL: http://www.videolan.org/vlc/
 # Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
 # Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
-# Depends on: firefox, libmad, ffmpeg, qt4, libdvdnav, liba52, libgcrypt, live555
+# Depends on: firefox libmad ffmpeg qt4 libdvdnav liba52 libgcrypt live555
 
 name=vlc-mozilla
 version=2.1.5

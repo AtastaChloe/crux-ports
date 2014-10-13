@@ -1,0 +1,22 @@
+# Description: Lightweight media player written in python
+# URL: http://lftp.yar.ru/
+# Maintainer:  Chloe Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloe Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: gstreamer pyxdg pygtk pygobjects
+
+name=whaawmp
+version=0.2.14
+release=1
+source=(http://download.gna.org/$name/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --disable-nls --with-openssl=/usr \
+	            --mandir=/usr/man --sysconfdir=/usr/etc
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/lib
+}

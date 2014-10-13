@@ -1,0 +1,17 @@
+# Description: compatibility library for python
+# URL: https://pypi.python.org/pypi/six/1.8.0
+# Maintainer: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Packager: Chloé Desoutter, chloe dot desoutter at atasta dot net
+# Depends on: python 
+# https://pypi.python.org/packages/source/s/six/six-1.8.0.tar.gz
+
+name=six
+version=1.8.0
+release=1
+source=(https://pypi.python.org/packages/source/s/$name/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+  python setup.py build
+  python setup.py install --prefix=/usr --root=$PKG
+}

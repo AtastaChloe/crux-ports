@@ -1,0 +1,17 @@
+# Description:	Displays NAT connections
+# URL:		http://www.tweegy.nl/projects/netstat-nat/index.html
+# Maintainer:	Fredrik Rinnestam, fredrik at crux dot nu
+
+name=netstat-nat
+version=1.4.10
+release=1
+source=(http://www.tweegy.nl/download/$name-$version.tar.gz)
+
+build(){
+	cd $name-$version
+	./configure --prefix=/usr \
+	--mandir=/usr/man
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share
+}
